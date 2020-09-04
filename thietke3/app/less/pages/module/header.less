@@ -1,0 +1,269 @@
+@color-main: #0c96de;
+#header {
+  width: 100%;
+  position: relative;
+  .header-top {
+    img {
+      width: 100%;
+    }
+  }
+  .header-menu {
+    background-image: url(../../../../dist/images/fsdf.png);
+    .nav {
+      .menu {
+        position: relative;
+        background-image: linear-gradient(0deg, #0e8be0 0%, #02cad8 100%);
+        padding-top: 15px;
+        margin-top: 5px;
+        display: flex;
+        justify-content: center;
+        .logo {
+          padding-right: 12px;
+        }
+        .dotted-top {
+          position: absolute;
+          top: -8px;
+          img {
+            width: 100%;
+          }
+        }
+        .dotted-bottom {
+          position: absolute;
+          bottom: -2px;
+          img {
+            width: 100%;
+          }
+        }
+        .menu-main {
+          display: flex;
+          justify-content: flex-end;
+          z-index: 10;
+          .close-menu {
+            display: none;
+            font-size: 28px;
+            padding-right: 10px;
+            color: #fff;
+            padding: 5px 5px 5px 130px;
+          }
+          .menu-left {
+            margin: 0 auto;
+            .menu-list {
+              &-item {
+                display: inline-block;
+                line-height: 0px;
+                padding: 15px 0px 20px;
+                margin-left: unset;
+                position: relative;
+                a {
+                  color: white;
+                  font-weight: bolder;
+                  font-size: 15px;
+                  padding: 7px 17px 7px 11px;
+                  border-radius: 3px;
+                  font-family: "Arial";
+                  &:hover {
+                    background-color: #057fc6;
+                    box-shadow: 1px 1px 3px rgba(51, 51, 51, 62%) inset;
+                  }
+                }
+                padding-bottom: 22px;
+                .drop-down {
+                  display: none;
+                  position: absolute;
+                  top: 128%;
+                  border-top: 3px solid #00b6ff;
+                  border-bottom: 3px solid #00b6ff;
+                  width: 189px;
+                  height: 119px;
+                  font-size: 11px;
+                  padding: 8px 0 0 0;
+                  font-weight: 700;
+                  background-image: url(../../../../dist/images/ccdcdc.png);
+                  .miss {
+                    color: white;
+                    position: relative;
+                    padding: 10px 23px 19px;
+                    border-bottom: 1px white dotted;
+                  }
+                  &:hover {
+                    display: block;
+                  }
+                }
+                &:hover {
+                  .drop-down {
+                    display: block;
+                    z-index: 2;
+                  }
+                }
+                span {
+                  display: none;
+                }
+                &::after {
+                  content: "";
+                  position: absolute;
+                  width: 197px;
+                  height: 30px;
+                  top: 100%;
+                  left: 0;
+                  &:hover {
+                    .drop-down {
+                      display: block;
+                      z-index: 2;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .open-menu {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  #header .header-menu .nav .menu {
+    display: flex;
+    .logo {
+      position: unset;
+      padding: 0 0 0 25px;
+      transform: unset;
+      &::after {
+        content: unset;
+      }
+    }
+    .menu-main .menu-left .menu-list {
+      &-item {
+        margin-left: -5px;
+        a {
+          font-size: 13px;
+          padding-right: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #header .header-menu .nav {
+    padding-top: 5px;
+    position: relative;
+    .menu {
+      padding-top: 5px;
+      margin: unset;
+      height: 45px;
+      .logo {
+        padding-bottom: 5px;
+        display: none;
+      }
+      .menu-main {
+        display: unset;
+        position: fixed;
+        background: @color-main;
+        left: 0;
+        top: 0;
+        transform: translateX(-100%);
+        transition: 0.5s;
+        height: 100%;
+        &.active {
+          overflow: auto;
+          transform: translateX(0px);
+        }
+        .close-menu {
+          display: flex;
+          border-bottom: solid 1px white;
+          width: 100%;
+          justify-content: flex-end;
+        }
+        .menu-left {
+          padding-top: 8px;
+        }
+        .menu-list {
+          .menu-list-item {
+            display: block;
+            border: unset;
+            padding: 10px auto;
+            &:hover {
+              background-color: yellowgreen;
+            }
+            a {
+              color: white;
+            }
+            button {
+              padding-left: 0;
+              background: @color-main;
+              color: white;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      .open-menu {
+        display: block;
+        font-size: 38px;
+        position: absolute;
+        transform: translate(88%, -22%);
+        left: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #header .header-menu .nav {
+    padding-top: 0;
+    .menu {
+      #header .header-menu .nav .menu .menu-main {
+        width: 180px;
+      }
+      .logo {
+        transform: unset;
+        padding-left: 20px;
+        padding-right: 55px;
+        img {
+          width: 115px;
+        }
+      }
+      .open-menu {
+        font-size: 29px;
+        transform: translate(100%, -6px);
+      }
+      .menu-main .menu-left {
+        padding-right: 0;
+        padding-top: 0;
+        .menu-list {
+          .menu-list-item {
+            padding-left: 0;
+            a {
+              font-size: 13px;
+              line-height: 41px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  #header .header-menu .nav {
+    padding-top: 0;
+    .menu {
+      height: 38px;
+      margin-top: 3px;
+      .logo img {
+        width: 100px;
+      }
+      .open-menu {
+        font-size: 20px;
+        transform: translate(100%, -2px);
+      }
+      .menu-main .menu-left .menu-list .menu-list-item {
+        margin-left: unset;
+      }
+    }
+  }
+}

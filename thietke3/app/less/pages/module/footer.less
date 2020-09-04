@@ -1,0 +1,126 @@
+.footer {
+  background-image: url(../../../../dist/images/fsdf.png);
+  .module-content {
+    background-image: url(../../../../dist/images/CAC.png);
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.35));
+    margin-bottom: -12%;
+    .content-title {
+      font-size: 21px;
+      line-height: 33px;
+      color: #00abf9;
+      font-weight: 600;
+      font-family: "Montserrat";
+      position: relative;
+      padding: 33px 0 0 35px;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 1px;
+        background-color: #0d92df;
+        top: 74%;
+        left: 17%;
+      }
+    }
+    .list-choose {
+      display: flex;
+      margin: 25px auto 34px;
+      background: #f0f8ff;
+      padding: 9px 20px;
+      width: 93.7%;
+      border-radius: 3px;
+      justify-content: space-evenly;
+      .choose {
+        margin-right: 15px;
+        #cars {
+          border: unset;
+          padding: 13px 82px 13px 16px;
+          font-weight: bolder;
+        }
+      }
+      .spec {
+        margin-right: unset;
+      }
+    }
+    .infor {
+      text-align: center;
+      font-size: 15px;
+      line-height: 15px;
+      color: #33c5ff;
+      padding-bottom: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .footer .module-content {
+    margin-bottom: -15%;
+    .content-title::after {
+      width: 77%;
+      left: 20%;
+    }
+    .list-choose .choose #cars {
+      padding: 13px 31px 13px 16px;
+      width: 100%;
+    }
+    .content-title::after {
+      width: 71%;
+      left: 26%;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .footer .module-content {
+    margin-bottom: -18%;
+    .list-choose .choose #cars {
+      padding: 13px 12px 13px 2px;
+      font-size: 12px;
+    }
+    .infor {
+      font-size: 13px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer .module-content {
+    margin-bottom: unset;
+    background-size: cover;
+    .infor {
+      font-size: 11px;
+    }
+    .content-title {
+      font-size: 19px;
+      padding: 33px 0 0 14px;
+      &::after {
+        width: 63%;
+        left: 34%;
+      }
+    }
+    .list-choose {
+      display: block;
+      .choose {
+        margin-bottom: 15px;
+        margin-right: unset;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .footer .module-content {
+    .infor {
+      font-size: 11px;
+      line-height: 14px;
+    }
+    .content-title {
+      font-size: 16px;
+      &::after {
+        width: 51%;
+        left: 45%;
+      }
+    }
+  }
+}

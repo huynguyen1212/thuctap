@@ -1,0 +1,203 @@
+@color-main: #ff1387;
+#header {
+  position: relative;
+  z-index: 10;
+  background-image: url(../../../../dist/images/ffef.png);
+  background-repeat: no-repeat;
+  .header-menu {
+    .nav {
+      padding-top: 20px;
+      .menu {
+        position: relative;
+        .logo {
+          padding-top: 10px;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .menu-main {
+          display: flex;
+          justify-content: space-between;
+          padding-top: 35px;
+          .close-menu {
+            display: none;
+            font-size: 28px;
+            padding-right: 10px;
+            color: #fff;
+            padding: 5px 5px 5px 130px;
+            border-bottom: solid 1px white;
+          }
+          .menu-left {
+          }
+          .menu-right {
+          }
+          .menu-list {
+            &-item {
+              display: inline-block;
+              margin-left: 38px;
+              a {
+                color: white;
+                font-weight: bold;
+                font-size: 15px;
+                font-family: "Big Shoulders Text";
+                line-height: 5px;
+              }
+              .sign {
+                display: flex;
+              }
+            }
+            span {
+              display: none;
+            }
+          }
+        }
+        .open-menu {
+          display: none;
+        }
+      }
+    }
+  }
+  .header-content {
+    padding: 282px 0;
+    h2 {
+      font-size: 35px;
+      line-height: 5px;
+      color: #ffffff;
+      font-weight: bold;
+      font-family: "Big Shoulders Text";
+      text-align: center;
+    }
+    p {
+      font-size: 20px;
+      line-height: 23px;
+      margin: 0 340px;
+      padding-top: 47px;
+      color: #ffffff;
+      font-family: "Big Shoulders Text";
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  #header .header-menu .nav .menu {
+    display: flex;
+    .logo {
+      position: unset;
+      padding: 0;
+      transform: unset;
+      padding-right: 25px;
+      &::after {
+        content: unset;
+      }
+    }
+    .menu-main .menu-list {
+      &-item {
+        margin-left: 0;
+        a {
+          font-size: 13px;
+          padding-right: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #header .header-menu .nav {
+    padding-top: 5px;
+    position: relative;
+    .menu {
+      .logo {
+        padding-bottom: 5px;
+      }
+      .menu-main {
+        display: unset;
+        position: fixed;
+        background: @color-main;
+        left: 0;
+        top: 0;
+        transform: translateX(-100%);
+        transition: 0.5s;
+        height: 100%;
+        &.active {
+          overflow: auto;
+          transform: translateX(0px);
+        }
+        .close-menu {
+          display: block;
+        }
+        .menu-left {
+          padding-top: 8px;
+        }
+        .menu-list {
+          .menu-list-item {
+            display: block;
+            border: unset;
+            padding: 10px auto;
+            &:hover {
+              background-color: yellowgreen;
+            }
+            a {
+              color: white;
+            }
+            button {
+              padding-left: 0;
+              background: @color-main;
+              color: white;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      .open-menu {
+        display: block;
+        font-size: 38px;
+        position: absolute;
+        right: 0;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #header .header-menu .nav .menu {
+    .logo {
+      transform: unset;
+      padding-left: 20px;
+      padding-right: 55px;
+    }
+    .menu-left .menu-list {
+      .menu-list-item {
+        padding-left: 0;
+        a {
+          font-size: 16px;
+          line-height: 41px;
+        }
+      }
+      li:nth-child(4) {
+        padding-right: 15px;
+      }
+      li:nth-child(5) {
+        padding-right: 121px;
+      }
+      li:nth-child(6) {
+        padding-right: 51px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .header-menu {
+    .bs-container {
+      .nav {
+        .menu {
+          &.logo {
+          }
+        }
+      }
+    }
+  }
+}
